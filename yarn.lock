@@ -14,6 +14,12 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/core-util-is/download/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
+debug@^3.1.0:
+  version "3.1.0"
+  resolved "http://registry.npm.taobao.org/debug/download/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  dependencies:
+    ms "2.0.0"
+
 es6-promise@3.2.1:
   version "3.2.1"
   resolved "http://registry.npm.taobao.org/es6-promise/download/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
@@ -26,20 +32,24 @@ isarray@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/isarray/download/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
-mongodb-core@2.1.11:
-  version "2.1.11"
-  resolved "http://registry.npm.taobao.org/mongodb-core/download/mongodb-core-2.1.11.tgz#1c38776ceb174997a99c28860eed9028da9b3e1a"
+mongodb-core@2.1.19:
+  version "2.1.19"
+  resolved "http://registry.npm.taobao.org/mongodb-core/download/mongodb-core-2.1.19.tgz#00fbd5e5a3573763b9171cfd844e60a8f2a3a18b"
   dependencies:
     bson "~1.0.4"
     require_optional "~1.0.0"
 
-mongodb@2.2.27:
-  version "2.2.27"
-  resolved "http://registry.npm.taobao.org/mongodb/download/mongodb-2.2.27.tgz#34122034db66d983bcf6ab5adb26a24a70fef6e6"
+mongodb@^2.2.27:
+  version "2.2.35"
+  resolved "http://registry.npm.taobao.org/mongodb/download/mongodb-2.2.35.tgz#cd1b5af8a9463e3f9a787fa5b3d05565579730f9"
   dependencies:
     es6-promise "3.2.1"
-    mongodb-core "2.1.11"
+    mongodb-core "2.1.19"
     readable-stream "2.2.7"
+
+ms@2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/ms/download/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 process-nextick-args@~1.0.6:
   version "1.0.7"

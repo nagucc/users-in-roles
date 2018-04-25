@@ -1,6 +1,6 @@
 {
   "name": "users-in-roles",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "用户角色授权模块",
   "main": "index.mjs",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nagucc/users-in-roles#readme",
   "dependencies": {
+    "debug": "^3.1.0",
     "mongodb": "^2.2.27"
   }
 }
