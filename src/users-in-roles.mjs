@@ -22,7 +22,7 @@ UserInRole
 */
 
 
-import { MongoClient } from 'mongodb';
+import mongodb from 'mongodb';
 import { error, info } from './config.mjs';
 
 export default class MongoUserInRole {
@@ -31,7 +31,7 @@ export default class MongoUserInRole {
     this.collectionName = collectionName;
   }
   async getDb() {
-    const db = await MongoClient.connect(this.mongoUrl);
+    const db = await mongodb.MongoClient.connect(this.mongoUrl);
     info('connected to ', this.mongoUrl);
     db.on('error', (e) => {
       error(e);
@@ -136,5 +136,16 @@ export default class MongoUserInRole {
     };
     info('usersByUserId: ', query);
     return col.findOne(query);
+  }
+
+  async apps() {
+    const db = await this.getDb();
+    const col = db.collection(this.collectionName);
+    const users = await col.find().toArray();
+    const apps = users.reduce((acc, cur) => {
+      Object.keys(cur.user).forEach(appId => acc.add(appId));
+      return acc;
+    }, new Set());
+    return Array.from(apps);
   }
 }

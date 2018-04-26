@@ -44,3 +44,5 @@
 ### usersByRole(role)
 
 ### userByUserId(appId, userId)
+
+### apps()
