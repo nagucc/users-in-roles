@@ -148,4 +148,15 @@ export default class MongoUserInRole {
     }, new Set());
     return Array.from(apps);
   }
+
+  async attachUser(attachTo, newUser) {
+    const uir = await this.getUser(attachTo.appId, attachTo.userId);
+    const db = await this.getDb();
+    const col = db.collection(this.collectionName);
+    return col.updateOne({
+      _id: uir._id,
+    }, {
+      $set: { [`user.${newUser.appId}`]: newUser.userId },
+    });
+  }
 }
