@@ -48,3 +48,5 @@
 ### apps()
 
 ### attachUser(attatchTo, user)
+
+### detachUser(appId, userId)

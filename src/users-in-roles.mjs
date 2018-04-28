@@ -159,4 +159,15 @@ export default class MongoUserInRole {
       $set: { [`user.${newUser.appId}`]: newUser.userId },
     });
   }
+
+  async detachUser(appId, userId) {
+    const uir = await this.getUser(appId, userId);
+    const db = await this.getDb();
+    const col = db.collection(this.collectionName);
+    return col.updateOne({
+      _id: uir._id,
+    }, {
+      $unset: { [`user.${appId}`]: userId },
+    });
+  }
 }
