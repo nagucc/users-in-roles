@@ -79,9 +79,9 @@ export default class MongoUserInRole {
     const db = await this.getDb();
     const col = db.collection(this.collectionName);
     const query = {
-      user: { [appId]: userId },
+      [`user.${appId}`]: userId,
     };
-    const result = col.updateOne(query, {
+    const result = await col.updateOne(query, {
       $addToSet: { roles: role },
     });
     info('addRole Result: ', result);
