@@ -14,7 +14,7 @@ export default class MongoApply {
     });
     return db;
   }
-  // 添加申请
+  // 添加app
   async insert(appId, name, other) {
     if (!appId || !name) throw new Error('appId or name must be provided.');
     const db = await this.getDb();
@@ -30,7 +30,7 @@ export default class MongoApply {
     return uirId;
   }
 
-  // 添加申请
+  // 获取所有app信息
   async list() {
     const db = await this.getDb();
     const col = db.collection(this.collectionName);
