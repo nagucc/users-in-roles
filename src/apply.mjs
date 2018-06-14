@@ -39,4 +39,17 @@ export default class MongoApply {
     db.close();
     return result;
   }
+
+  // 删除申请
+  async remove(appId, userId) {
+    const db = await this.getDb();
+    const col = db.collection(this.collectionName);
+    const result = await col.deleteMany({
+      appId,
+      userId,
+    });
+    info('list Apply:', result);
+    db.close();
+    return result;
+  }
 }
