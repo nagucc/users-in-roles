@@ -29,4 +29,14 @@ export default class MongoApply {
     db.close();
     return uirId;
   }
+
+  // 获取申请列表
+  async list() {
+    const db = await this.getDb();
+    const col = db.collection(this.collectionName);
+    const result = await col.find().toArray();
+    info('list Apply:', result);
+    db.close();
+    return result;
+  }
 }
